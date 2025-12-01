@@ -7,9 +7,8 @@ public class Medicamento extends Item{
     private Status statusTratado;
 
     public Medicamento(String nome, Status statusTratado, int quantidade){
-        String descricao = "Esse medicamento é capaz de curar " + statusTratado;
+        super(nome, "Esse medicamento é capaz de curar " + statusTratado, quantidade);
         this.statusTratado = statusTratado;
-        super(nome, descricao, quantidade);
     }
 
     @Override
