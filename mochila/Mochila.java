@@ -17,10 +17,6 @@ public class Mochila {
         this.gerarItensIniciais();
     }
 
-    public void adicionarItem(Item item) {
-        itens.add(item);
-    }
-
     private void gerarItensIniciais() {
         Random random = new Random();
 
