@@ -12,9 +12,17 @@ public class ItemDeCura extends Item{
 
     @Override   
     public void aplicarEfeito(Pokemon pokemon) {
+        int vidaRecurada = pokemon.getVida() + this.cura;
+
+        if(vidaRecurada > pokemon.getVidaMaxima()){
+            pokemon.setVida(pokemon.getVidaMaxima());
+        }else{
+            pokemon.setVida(vidaRecurada);
+        }
+
         System.out.println(this.getNome() + " foi usado em " + pokemon.getNome() + "!");
         System.out.println(pokemon.getNome() + " recuperou " + this.cura + " de sua vida (HP)");
-        pokemon.setVida(pokemon.getVida() + this.cura);
+  
     }                        
     
 }
