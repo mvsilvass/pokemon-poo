@@ -10,7 +10,7 @@ public abstract class Pokemon {
     private int velocidade;
     private Status status;
 
-    public Pokemon(String nome, Tipo tipo, int vida,int vidaMaxima, int ataque, int defensa, int velocidade) {
+    public Pokemon(String nome, Tipo tipo, int vida, int vidaMaxima, int ataque, int defensa, int velocidade) {
         this.nome = nome;
         this.tipo = tipo;
         this.vida = vida;
@@ -18,6 +18,7 @@ public abstract class Pokemon {
         this.ataque = ataque;
         this.defensa = defensa;
         this.velocidade = velocidade;
+        this.status = Status.NORMAL;
     }
     
     /* gets */
@@ -29,7 +30,6 @@ public abstract class Pokemon {
     public int getDefensa() { return defensa; }
     public int getVelocidade() { return velocidade; }
     public Status getStatus() { return status; }
-
 
     /* sets */
     public void setVida(int vida) { this.vida = vida; }
