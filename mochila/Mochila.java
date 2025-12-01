@@ -7,6 +7,7 @@ import java.util.Random;
 import item.Item;
 import item.ItemDeCura;
 import item.Medicamento;
+import item.Reviver;
 import pokemon.Pokemon;
 import pokemon.Status;
 
@@ -28,6 +29,8 @@ public class Mochila {
         itens.add(new Medicamento("Antídoto", Status.ENVENENADO, random.nextInt(2) + 1));
         itens.add(new Medicamento("Antiqueimadura", Status.QUEIMANDO, random.nextInt(2) + 1));
         itens.add(new Medicamento("Despertar", Status.DORMINDO, random.nextInt(2) + 1));
+        itens.add(new Medicamento("Despertar", Status.DORMINDO, random.nextInt(2) + 1));
+        itens.add(new Reviver("Reviver", random.nextInt(2) + 1));
     }
 
     public void usarItem(Item itemEscolhido, Pokemon pokemon) {
