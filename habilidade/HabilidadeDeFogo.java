@@ -13,7 +13,7 @@ public class HabilidadeDeFogo extends Habilidade implements EfeitoDeStatus{
     public void usarHabilidade(Pokemon alvo) {
         int dano = getPokemon().getAtaque();
 
-        if(alvo.getTipo() == Tipo.AGUA){
+        if(alvo.getTipo() == Tipo.PLANTA){
             dano *= 2;
         }
 
