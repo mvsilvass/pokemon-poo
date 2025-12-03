@@ -23,22 +23,22 @@ public class Main {
         int opcao;
         while (jogador1.getEquipe().isEquipeCompleta()) {
             System.out.println("\n"+ jogador1.getNome() +", escolha seu Pokemons:");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             System.out.println("Tipo planta:\n");
             System.out.println("1 - Bulbassauro");
             System.out.println("2 - Chikorita");
             System.out.println("3 - Tangela");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             System.out.println("Tipo fogo:\n");
             System.out.println("4 - Charmander");
             System.out.println("5 - Vulpix");
             System.out.println("6 - Ponyta");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             System.out.println("Tipo agua:\n");
             System.out.println("7 - Squirtle");
             System.out.println("8 - Psyduck");
             System.out.println("9 - Poliwag");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             opcao = teclado.nextInt();
 
             if (opcao == 1){
@@ -66,22 +66,22 @@ public class Main {
 
         while (jogador2.getEquipe().isEquipeCompleta()) {
             System.out.println("\n"+ jogador2.getNome() +", escolha seu Pokemons:");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             System.out.println("Tipo planta:\n");
             System.out.println("1 - Bulbassauro");
             System.out.println("2 - Chikorita");
             System.out.println("3 - Tangela");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             System.out.println("Tipo fogo:\n");
             System.out.println("4 - Charmander");
             System.out.println("5 - Vulpix");
             System.out.println("6 - Ponyta");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             System.out.println("Tipo agua:\n");
             System.out.println("7 - Squirtle");
             System.out.println("8 - Psyduck");
             System.out.println("9 - Poliwag");
-            System.out.println("\n==============================");
+            System.out.println("\n--------------------------------");
             opcao = teclado.nextInt();
 
             if (opcao == 1){
