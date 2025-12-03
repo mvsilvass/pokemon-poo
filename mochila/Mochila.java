@@ -54,7 +54,7 @@ public class Mochila {
     public void atualizarQuantidade(Item item) {
         if (item.getQuantidade() != 0) {
             item.setQuantidade(item.getQuantidade() - 1);
-            System.out.println("\nQuantidade restante de " + item.getNome() + ": " + item.getQuantidade());
+            System.out.println("Quantidade restante de " + item.getNome() + ": " + item.getQuantidade());
         } else {
             itens.remove(item);
             System.out.println("\nTodos os " + item.getNome() + " da sua mochila foram usados!");
