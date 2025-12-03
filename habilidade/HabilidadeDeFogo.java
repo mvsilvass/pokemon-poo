@@ -12,7 +12,7 @@ public class HabilidadeDeFogo extends Habilidade implements EfeitoDeStatus{
     @Override
     public void aplicarStatus(Pokemon alvo) {
 
-        if(alvo.getStatus() != Status.NORMAL){
+        if(alvo.getStatus() != Status.DESMAIADO){
             alvo.setStatus(Status.QUEIMANDO);
         }
         
@@ -26,9 +26,9 @@ public class HabilidadeDeFogo extends Habilidade implements EfeitoDeStatus{
             dano *= 1.5;
         }
 
-        int vidaRestante = alvo.getVida() - dano;
+        int vidaRestante = alvo.getVida() - (int) Math.round(dano);
 
-        if(vidaRestante <= alvo.getVida()){
+        if(vidaRestante <= 0){
             alvo.setStatus(Status.DESMAIADO);
             vidaRestante = 0;
         }
