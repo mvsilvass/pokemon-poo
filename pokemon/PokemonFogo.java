@@ -7,8 +7,8 @@ public class PokemonFogo extends Pokemon {
 
     private HabilidadeDeFogo habilidade;
 
-    public PokemonFogo(String nome, int vida, int vidaMaxima, int ataque, int defensa, int velocidade, String nomeHabilidade, String descricaoHabilidade) {
-        super(nome, Tipo.FOGO, vida, vidaMaxima, ataque, defensa, velocidade);
+    public PokemonFogo(String nome, int vida, int vidaMaxima, int ataque, int defensa, String nomeHabilidade, String descricaoHabilidade) {
+        super(nome, Tipo.FOGO, vida, vidaMaxima, ataque, defensa);
 
         this.habilidade = new HabilidadeDeFogo( nomeHabilidade, descricaoHabilidade, this);
     }

@@ -9,18 +9,16 @@ public abstract class Pokemon {
     private final int vidaMaxima;
     private int ataque;
     private int defensa;
-    private int velocidade;
     private Status status;
     private Habilidade habilidade;
 
-    public Pokemon(String nome, Tipo tipo, int vida, int vidaMaxima, int ataque, int defensa, int velocidade) {
+    public Pokemon(String nome, Tipo tipo, int vida, int vidaMaxima, int ataque, int defensa) {
         this.nome = nome;
         this.tipo = tipo;
         this.vida = vida;
         this.vidaMaxima = vidaMaxima;
         this.ataque = ataque;
         this.defensa = defensa;
-        this.velocidade = velocidade;
         this.status = Status.NORMAL;
     }
     
@@ -31,7 +29,6 @@ public abstract class Pokemon {
     public int getVidaMaxima() { return vidaMaxima; }    
     public int getAtaque() { return ataque; }
     public int getDefensa() { return defensa; }
-    public int getVelocidade() { return velocidade; }
     public Status getStatus() { return status; }
     public Habilidade getHabilidade() { return habilidade; }
 
@@ -39,7 +36,6 @@ public abstract class Pokemon {
     public void setVida(int vida) { this.vida = vida; }
     public void setAtaque(int ataque) { this.ataque = ataque; }
     public void setDefensa(int defensa) { this.defensa = defensa; }
-    public void setVelocidade(int velocidade) { this.velocidade = velocidade; }
     public void setStatus(Status status) { this.status = status; }
     
 

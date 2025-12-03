@@ -32,7 +32,6 @@ public class Equipe {
                     " | Vida: " + pokemon.getVida() + "/" + pokemon.getVidaMaxima() +
                     " | Atq: " + pokemon.getAtaque() +
                     " | Def: " + pokemon.getDefensa() +
-                    " | Vel: " + pokemon.getVelocidade() +
                     " | Status: " + pokemon.getStatus()
                 );
             }
@@ -70,7 +69,6 @@ public class Equipe {
                 " | Vida: " + pokemon.getVida() + "/" + pokemon.getVidaMaxima() +
                 " | Atq: " + pokemon.getAtaque() +
                 " | Def: " + pokemon.getDefensa() +
-                " | Vel: " + pokemon.getVelocidade() +
                 " | Status: " + pokemon.getStatus()
             );
         }else{

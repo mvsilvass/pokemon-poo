@@ -7,8 +7,8 @@ public class PokemonAgua extends Pokemon {
 
     private HabilidadeDeAgua habilidade;
 
-    public PokemonAgua(String nome, int vida, int vidaMaxima, int ataque, int defensa, int velocidade, String nomeHabilidade, String descricaoHabilidade) {
-        super(nome, Tipo.AGUA, vida, vidaMaxima, ataque, defensa, velocidade);
+    public PokemonAgua(String nome, int vida, int vidaMaxima, int ataque, int defensa, String nomeHabilidade, String descricaoHabilidade) {
+        super(nome, Tipo.AGUA, vida, vidaMaxima, ataque, defensa);
 
         this.habilidade = new HabilidadeDeAgua( nomeHabilidade, descricaoHabilidade, this);
     }
