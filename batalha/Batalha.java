@@ -136,7 +136,7 @@ public class Batalha {
     private void realizarAtaque(Pokemon atacante, Pokemon defensor) {
         System.out.println("\n----------  ATAQUE ----------\n");
         System.out.println(atacante.getNome() + " está atacando " + defensor.getNome() + "!");
-        System.out.println(atacante.getNome() + " sou a habilidade " + atacante.getHabilidade().getNome() + "!");
+        System.out.println(atacante.getNome() + " usou a habilidade " + atacante.getHabilidade().getNome() + "!");
 
         atacante.atacar(atacante.getHabilidade(), defensor);
 
