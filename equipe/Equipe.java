@@ -26,14 +26,13 @@ public class Equipe {
 
             System.out.println("Seu time Pokémon:");
             for (Pokemon pokemon: pokemons) {
-                System.out.println(
-                    "- " + pokemon.getNome() +
-                    " | Tipo: " + pokemon.getTipo() +
-                    " | Vida: " + pokemon.getVida() + "/" + pokemon.getVidaMaxima() +
-                    " | Atq: " + pokemon.getAtaque() +
-                    " | Def: " + pokemon.getDefensa() +
-                    " | Status: " + pokemon.getStatus()
-                );
+                System.out.println("Nome:   " + pokemon.getNome());
+                System.out.println("Tipo:   " + pokemon.getTipo());
+                System.out.println("Vida:   " + pokemon.getVida() + "/" + pokemon.getVidaMaxima());
+                System.out.println("Ataque: " + pokemon.getAtaque());
+                System.out.println("Defesa: " + pokemon.getDefensa());
+                System.out.println("Status: " + pokemon.getStatus());
+                System.out.println("--------------------------------\n");
             }
         
         }else{
@@ -63,14 +62,13 @@ public class Equipe {
         Pokemon pokemon = buscarPokemon(pokemonEscolhido);
 
         if(pokemon != null){
-            System.out.println(
-                "- " + pokemon.getNome() +
-                " | Tipo: " + pokemon.getTipo() +
-                " | Vida: " + pokemon.getVida() + "/" + pokemon.getVidaMaxima() +
-                " | Atq: " + pokemon.getAtaque() +
-                " | Def: " + pokemon.getDefensa() +
-                " | Status: " + pokemon.getStatus()
-            );
+            System.out.println("Nome:   " + pokemon.getNome());
+            System.out.println("Tipo:   " + pokemon.getTipo());
+            System.out.println("Vida:   " + pokemon.getVida() + "/" + pokemon.getVidaMaxima());
+            System.out.println("Ataque: " + pokemon.getAtaque());
+            System.out.println("Defesa: " + pokemon.getDefensa());
+            System.out.println("Status: " + pokemon.getStatus());
+            System.out.println("--------------------------------\n");
         }else{
             System.out.println(pokemonEscolhido.getAtaque() + " não está no seu time.");
         }
