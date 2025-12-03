@@ -25,7 +25,10 @@ public class Equipe {
         if (!pokemons.isEmpty()) {
 
             System.out.println("Seu time Pokémon:");
-            for (Pokemon pokemon: pokemons) {
+            for (int i = 0; i < pokemons.size(); i++) {
+                Pokemon pokemon = pokemons.get(i);
+                System.out.println((i + 1) + " - " + pokemon.getNome().toUpperCase());
+                System.out.println("--------------------------------\n");
                 System.out.println("Nome:   " + pokemon.getNome());
                 System.out.println("Tipo:   " + pokemon.getTipo());
                 System.out.println("Vida:   " + pokemon.getVida() + "/" + pokemon.getVidaMaxima());
@@ -72,6 +75,38 @@ public class Equipe {
         }else{
             System.out.println(pokemonEscolhido.getAtaque() + " não está no seu time.");
         }
+    }
+
+    public boolean isEquipeCompleta() {
+        return pokemons.size() < totalPokemons;
+    }
+
+    public boolean temPokemonComVida() {
+        for (Pokemon pokemon : pokemons) {
+            if (pokemon.getVida() > 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public Pokemon proximoPokemonComVida() {
+        for (Pokemon pokemon : pokemons) {
+            if (pokemon.getVida() > 0) {
+                return pokemon;
+            }
+        }
+        
+        return null;
+    }
+
+    public Pokemon getPokemonPorIndice(int indice) {
+        if (indice >= 0 && indice < pokemons.size()) {
+            return pokemons.get(indice);
+        }
+
+        return null;
     }
 
 }
