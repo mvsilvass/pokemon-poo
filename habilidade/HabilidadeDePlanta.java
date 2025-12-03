@@ -11,10 +11,10 @@ public class HabilidadeDePlanta extends Habilidade{
 
     @Override
     public void usarHabilidade(Pokemon alvo) {
-        int dano = getPokemon().getAtaque();
+        int dano = this.getPokemon().getAtaque() - alvo.getDefensa();
 
         if(alvo.getTipo() == Tipo.AGUA){
-            dano *= 2;
+            dano *= 1.5;
         }
         
         int vida = alvo.getVida() - dano;
