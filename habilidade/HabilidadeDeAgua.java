@@ -1,6 +1,7 @@
 package habilidade;
 
 import pokemon.Pokemon;
+import pokemon.Status;
 import pokemon.Tipo;
 
 public class HabilidadeDeAgua extends Habilidade{
@@ -16,7 +17,14 @@ public class HabilidadeDeAgua extends Habilidade{
             dano *= 2;
         }
 
-        alvo.setVida(alvo.getVida() - dano);
+        int vida = alvo.getVida() - dano;
+
+        if(vida >= alvo.getVida()){
+            alvo.setStatus(Status.DESMAIADO);
+            vida = 0;
+        }
+
+        alvo.setVida(vida);
     }   
 
 }
