@@ -11,7 +11,7 @@ import pokemon.Pokemon;
 import pokemon.Status;
 
 public class Mochila {
-    private List<Item> itens = new ArrayList<>(); 
+    private List<Item> itens = new ArrayList<>();
 
     public Mochila() {
         this.gerarItensIniciais();
@@ -25,7 +25,6 @@ public class Mochila {
         itens.add(new ItemDeCura("Super Pocao", 50, random.nextInt(2) + 1));
         itens.add(new ItemDeCura("Refrigerante", 30, random.nextInt(2) + 1));
 
-        itens.add(new Medicamento("Antidoto", Status.ENVENENADO, random.nextInt(2) + 1));
         itens.add(new Medicamento("Antiqueimadura", Status.QUEIMANDO, random.nextInt(2) + 1));
         itens.add(new Reviver("Reviver", random.nextInt(2) + 1));
     }
@@ -33,11 +32,11 @@ public class Mochila {
     public void usarItem(String nome, Pokemon pokemon) {
         Item item = buscarItem(nome);
 
-        if(item != null){
+        if (item != null) {
             item.aplicarEfeito(pokemon);
             atualizarQuantidade(item);
-        }else{
-            System.out.println("Voce nao possui " + nome + " na mochila!");
+        } else {
+            System.out.println("\nVoce nao possui " + nome + " na mochila!");
         }
 
     }
@@ -48,46 +47,49 @@ public class Mochila {
                 return item;
             }
         }
-        
+
         return null;
     }
 
-    public void atualizarQuantidade(Item item){
-        if (item.getQuantidade() > 0) {  
+    public void atualizarQuantidade(Item item) {
+        if (item.getQuantidade() != 0) {
             item.setQuantidade(item.getQuantidade() - 1);
-            System.out.println("Quantidade restante de " + item.getNome() + ": " + item.getQuantidade());
-        }else{ 
+            System.out.println("\nQuantidade restante de " + item.getNome() + ": " + item.getQuantidade());
+        } else {
             itens.remove(item);
-            System.out.println("Todos os " + item.getNome() + " da sua mochila foram usados!");
+            System.out.println("\nTodos os " + item.getNome() + " da sua mochila foram usados!");
         }
     }
 
-    public void listarItens(){
+    public void listarItens() {
         if (!itens.isEmpty()) {
-            System.out.println("Itens na mochila:");
+            System.out.println("\nItens na mochila:");
 
             for (Item item : itens) {
-                System.out.println("- " + item.getNome() + " x" + (item.getQuantidade() + 1));
+                if (item.getQuantidade() > 0) {
+                    System.out.println("- " + item.getNome() + " x" + (item.getQuantidade()));
+                }
+
             }
-           
-        }else{
-            System.out.println("Sua mochila está vazia!");
+
+        } else {
+            System.out.println("\nSua mochila está vazia!");
         }
-    
+
     }
 
-    public void mostrarItem(Item itemEscolhido){
+    public void mostrarItem(Item itemEscolhido) {
         Item item = buscarItem(itemEscolhido.getNome());
 
-        if(item != null){
+        if (item != null) {
             System.out.println("-------------------------------------");
             System.out.println("- Nome: " + item.getNome());
             System.out.println("  Descrição: " + item.getDescricao());
             System.out.println("  Quantidade: " + item.getQuantidade());
             System.out.println("--------------------------------------");
-        }else{
-            System.out.println("Você não possui " + itemEscolhido.getNome() + " na mochila!");
+        } else {
+            System.out.println("\nVocê não possui " + itemEscolhido.getNome() + " na mochila!");
         }
     }
-    
+
 }
