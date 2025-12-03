@@ -20,12 +20,12 @@ public class Batalha {
         this.pokemonAtivo1 = jogador1.getEquipe().getPokemons().get(0);
         this.pokemonAtivo2 = jogador2.getEquipe().getPokemons().get(0);
     }
-    
+
     public Treinador verificarTurno() {
         if (this.turno % 2 == 0) {
             return jogador1;
         } else {
-            return jogador2; 
+            return jogador2;
         }
     }
 
@@ -46,7 +46,9 @@ public class Batalha {
     }
 
     public void iniciarBatalha() {
-        System.out.println("A BATALHA COMEÇOU! " + jogador1.getNome().toUpperCase() + " VS " + jogador2.getNome().toUpperCase());
+        System.out.println("\n--------------------------------");
+        System.out.println("\nA BATALHA COMEÇOU! " + jogador1.getNome().toUpperCase() + " VS " + jogador2.getNome().toUpperCase());
+        System.out.println("\n--------------------------------");
 
         while (true) {
             Treinador jogadorAtual = verificarTurno();
@@ -63,7 +65,7 @@ public class Batalha {
                     System.out.println(adversario.getNome().toUpperCase() + " VENCEU A BATALHA!");
                     break;
                 }
-                
+
                 trocarPokemonForcado(jogadorAtual);
                 pokemonAtual = getPokemonAtivo(jogadorAtual);
             }
@@ -73,7 +75,7 @@ public class Batalha {
 
                 if (!adversario.getEquipe().temPokemonComVida()) {
                     System.out.println("\n" + adversario.getNome() + " ficou sem Pokémon!");
-                    System.out.println(jogadorAtual.getNome().toUpperCase()+ " VENCEU A BATALHA!");
+                    System.out.println(jogadorAtual.getNome().toUpperCase() + " VENCEU A BATALHA!");
                     break;
                 }
 
@@ -82,27 +84,28 @@ public class Batalha {
             }
 
             // Menu do jogador atual
-            System.out.println("\n----------  TURNO " + (turno + 1) + " ----------");
+            System.out.println("\n----------  TURNO " + (turno + 1) + " ----------\n");
             System.out.println(jogadorAtual.getNome() + ", é sua vez!");
             exibirStatusBatalha(pokemonAtual, pokemonAdversario, jogadorAtual, adversario);
-            
+
             boolean acaoValida = false;
             while (!acaoValida) {
-                System.out.println("\nEscolha uma ação:");
+                System.out.println("Escolha uma ação:");
                 System.out.println("1 - Atacar");
                 System.out.println("2 - Mochila");
                 System.out.println("3 - Trocar Pokémon");
-                System.out.println("4 - Desistir"); 
+                System.out.println("4 - Verificar Pokémons");
+                System.out.println("5 - Desistir");
 
                 int escolha = teclado.nextInt();
                 teclado.nextLine();
-                
-                if(escolha == 4){
+
+                if (escolha == 5) {
                     System.out.println("\n" + jogadorAtual.getNome() + " desistiu :(");
                     System.out.println(adversario.getNome().toUpperCase() + " VENCEU A BATALHA!");
                     return;
                 }
-                
+
                 if (escolha == 1) {
                     realizarAtaque(pokemonAtual, pokemonAdversario);
                     acaoValida = true;
@@ -121,6 +124,8 @@ public class Batalha {
                         System.out.println("Ação cancelada. Escolha novamente.");
                     }
 
+                } else if (escolha == 4) {
+                    jogadorAtual.getEquipe().listarPokemonos();
                 } else {
                     System.out.println("Opção inválida! Tente novamente.");
                 }
@@ -129,20 +134,20 @@ public class Batalha {
     }
 
     private void realizarAtaque(Pokemon atacante, Pokemon defensor) {
-        System.out.println("\n----------  ATAQUE ----------");
+        System.out.println("\n----------  ATAQUE ----------\n");
         System.out.println(atacante.getNome() + " está atacando " + defensor.getNome() + "!");
-        System.out.println(atacante.getNome() + " usa a habilidade " + atacante.getHabilidade().getNome() + "!");
-       
-        atacante.atacar(atacante.getHabilidade(), defensor);
-        
-        System.out.println(defensor.getNome() + " agora tem " + defensor.getVida() + " de vida!");
+        System.out.println(atacante.getNome() + " sou a habilidade " + atacante.getHabilidade().getNome() + "!");
 
-        if(defensor.getStatus() != Status.NORMAL && defensor.getStatus() != Status.DESMAIADO){
+        atacante.atacar(atacante.getHabilidade(), defensor);
+
+        System.out.println("\n" + defensor.getNome() + " agora tem " + defensor.getVida() + " de vida!");
+
+        if (defensor.getStatus() != Status.NORMAL && defensor.getStatus() != Status.DESMAIADO) {
             System.out.println(defensor.getNome() + " está " + defensor.getStatus().name().toLowerCase() + "!");
         }
     }
 
-    private void usarMochila(Treinador jogador, Pokemon pokemonAtual) { 
+    private void usarMochila(Treinador jogador, Pokemon pokemonAtual) {
         Mochila mochila = jogador.getMochila();
         mochila.listarItens();
 
@@ -153,7 +158,7 @@ public class Batalha {
             System.out.println("Ação cancelada.");
             return;
         }
-        
+
         mochila.usarItem(nomeItem, pokemonAtual);
         turno++;
     }
@@ -161,13 +166,12 @@ public class Batalha {
     private boolean trocarPokemon(Treinador jogador) {
 
         System.out.println("\n------ TROCAR POKÉMON ------");
-        System.out.println("\nPokémon disponíveis:");
         jogador.getEquipe().listarPokemonos();
 
         System.out.println("\nDigite o número do Pokémon ( 0 para cancelar):");
 
         int escolha = teclado.nextInt();
-        teclado.nextLine(); 
+        teclado.nextLine();
 
         if (escolha == 0) {
             System.out.println("\nCancelando...");
@@ -178,29 +182,35 @@ public class Batalha {
 
         if (novoPokemon == null) {
             System.out.println("\nNúmero inválido! Tente novamente.");
-        }else{
+        } else {
             if (novoPokemon.getStatus() == Status.DESMAIADO) {
-                System.out.println("Este Pokémon está desmaiado!");
-            }else{
-                System.out.println(jogador.getNome() + " enviou " + novoPokemon.getNome() + "!");
-                setPokemonAtivo(jogador, novoPokemon);
-                return true;
+                System.out.println("\nEste Pokémon está desmaiado!");
+            } else {
+                if (novoPokemon == getPokemonAtivo(jogador)) {
+                    System.out.println("\nEste Pokémon já está em batalha!");
+                } else {
+                    System.out.println("\n" + jogador.getNome() + " enviou " + novoPokemon.getNome() + "!");
+                    setPokemonAtivo(jogador, novoPokemon);
+                    return true;
+                }
+
             }
         }
-        
+
         return false;
     }
 
     private void trocarPokemonForcado(Treinador jogador) {
         Pokemon pokemonVivo = jogador.getEquipe().proximoPokemonComVida();
-        
+
         if (pokemonVivo != null) {
             System.out.println(jogador.getNome() + " enviou " + pokemonVivo.getNome() + "!");
             setPokemonAtivo(jogador, pokemonVivo);
         }
     }
 
-    private void exibirStatusBatalha(Pokemon pokemonAtual, Pokemon pokemonAdversario, Treinador jogadorAtual, Treinador jogadorAdversario) {
+    private void exibirStatusBatalha(Pokemon pokemonAtual, Pokemon pokemonAdversario, Treinador jogadorAtual,
+            Treinador jogadorAdversario) {
         System.out.println("\n------ STATUS DA BATALHA ------\n");
 
         System.out.println("Treinador: " + jogadorAtual.getNome());
@@ -210,5 +220,4 @@ public class Batalha {
         jogadorAdversario.getEquipe().verificarPokemon(pokemonAdversario);
     }
 
-    
 }
