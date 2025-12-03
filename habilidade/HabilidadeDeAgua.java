@@ -11,14 +11,13 @@ public class HabilidadeDeAgua extends Habilidade{
 
     @Override
     public void usarHabilidade(Pokemon alvo) {
-        int dano = getPokemon().getAtaque();
+        int dano = this.getPokemon().getAtaque() - alvo.getDefensa();
 
         if(alvo.getTipo() == Tipo.FOGO){
-            dano *= 2;
+            dano *= 1.5;
         }
 
         int vida = alvo.getVida() - dano;
-
         if(vida >= alvo.getVida()){
             alvo.setStatus(Status.DESMAIADO);
             vida = 0;
