@@ -17,13 +17,14 @@ public class HabilidadeDeAgua extends Habilidade{
             dano *= 1.5;
         }
 
-        int vida = alvo.getVida() - dano;
-        if(vida >= alvo.getVida()){
+        int vidaRestante = alvo.getVida() - dano;
+
+        if(vidaRestante <= alvo.getVida()){
             alvo.setStatus(Status.DESMAIADO);
-            vida = 0;
+            vidaRestante = 0;
         }
 
-        alvo.setVida(vida);
+        alvo.setVida(vidaRestante);
     }   
 
 }
