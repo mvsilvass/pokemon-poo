@@ -41,7 +41,7 @@ public class Main {
             System.out.println("\n==============================");
             opcao = teclado.nextInt();
 
-             if (opcao == 1){
+            if (opcao == 1){
                 jogador1.getEquipe().adicionarPokemon(new PokemonPlanta("Bulbasaur", 90, 90, 37, 22, "Folha Navalha", "Corta o inimigo com folhas afiadas"));
             } else if (opcao == 2){
                 jogador1.getEquipe().adicionarPokemon(new PokemonPlanta("Chikorita", 90, 90, 38, 22, "Folha Navalha", "Corta o inimigo com folhas afiadas"));
@@ -84,24 +84,24 @@ public class Main {
             System.out.println("\n==============================");
             opcao = teclado.nextInt();
 
-             if (opcao == 1){
-                jogador1.getEquipe().adicionarPokemon(new PokemonPlanta("Bulbasaur", 90, 90, 37, 22, "Folha Navalha", "Corta o inimigo com folhas afiadas"));
+            if (opcao == 1){
+                jogador2.getEquipe().adicionarPokemon(new PokemonPlanta("Bulbasaur", 90, 90, 37, 22, "Folha Navalha", "Corta o inimigo com folhas afiadas"));
             } else if (opcao == 2){
-                jogador1.getEquipe().adicionarPokemon(new PokemonPlanta("Chikorita", 90, 90, 38, 22, "Folha Navalha", "Corta o inimigo com folhas afiadas"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonPlanta("Chikorita", 90, 90, 38, 22, "Folha Navalha", "Corta o inimigo com folhas afiadas"));
             } else if (opcao == 3){
-                jogador1.getEquipe().adicionarPokemon(new PokemonPlanta("Tangela", 110, 110, 42, 21, "Vinhaço", "Ataca o inimigo com vinhas"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonPlanta("Tangela", 110, 110, 42, 21, "Vinhaço", "Ataca o inimigo com vinhas"));
             } else if (opcao == 4){
-                jogador1.getEquipe().adicionarPokemon(new PokemonFogo("Charmander", 78, 78, 40, 26, "Lanca Chamas", "Um poderoso ataque de fogo"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonFogo("Charmander", 78, 78, 40, 26, "Lanca Chamas", "Um poderoso ataque de fogo"));
             } else if (opcao == 5){
-                jogador1.getEquipe().adicionarPokemon(new PokemonFogo("Vulpix", 76, 76, 49, 27, "Bola de Fogo", "Uma bola de fogo incandescente"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonFogo("Vulpix", 76, 76, 49, 27, "Bola de Fogo", "Uma bola de fogo incandescente"));
             } else if (opcao == 6){
-                jogador1.getEquipe().adicionarPokemon(new PokemonFogo("Ponyta", 100, 100, 51, 19, "Chamas Ardentes", "Chamas que queimam intensamente"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonFogo("Ponyta", 100, 100, 51, 19, "Chamas Ardentes", "Chamas que queimam intensamente"));
             } else if (opcao == 7){
-                jogador1.getEquipe().adicionarPokemon(new PokemonAgua("Squirtle", 88, 88, 48, 21, "Jato de Agua", "Um jato de agua pressurizada"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonAgua("Squirtle", 88, 88, 48, 21, "Jato de Agua", "Um jato de agua pressurizada"));
             } else if (opcao == 8){
-                jogador1.getEquipe().adicionarPokemon(new PokemonAgua("Psyduck", 97, 97, 38, 24, "Onda de Agua", "Uma onda poderosa de agua"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonAgua("Psyduck", 97, 97, 38, 24, "Onda de Agua", "Uma onda poderosa de agua"));
             } else if (opcao == 9){
-                jogador1.getEquipe().adicionarPokemon(new PokemonAgua("Poliwag", 80, 80, 41, 20, "Redemoinho", "Cria um redemoinho para atacar o inimigo"));
+                jogador2.getEquipe().adicionarPokemon(new PokemonAgua("Poliwag", 80, 80, 41, 20, "Redemoinho", "Cria um redemoinho para atacar o inimigo"));
             } else {
                 System.out.println("\nOpção invalida. Tente novamente.");
             }
