@@ -21,8 +21,8 @@ public class Main {
 
 
         int opcao;
-        while (jogador1.getEquipe().getPokemons().size() < jogador1.getEquipe().getTotalPokemons()) {
-            System.out.println("\nJogador 1, escolha seu Pokemons:");
+        while (jogador1.getEquipe().isEquipeCompleta()) {
+            System.out.println("\n"+ jogador1.getNome() +", escolha seu Pokemons:");
             System.out.println("\n==============================");
             System.out.println("Tipo planta:\n");
             System.out.println("1 - Bulbassauro");
@@ -64,8 +64,8 @@ public class Main {
             }
         }   
 
-        while (jogador2.getEquipe().getPokemons().size() < jogador2.getEquipe().getTotalPokemons()) {
-            System.out.println("\nJogador 2, escolha seu Pokemons:");
+        while (jogador2.getEquipe().isEquipeCompleta()) {
+            System.out.println("\n"+ jogador2.getNome() +", escolha seu Pokemons:");
             System.out.println("\n==============================");
             System.out.println("Tipo planta:\n");
             System.out.println("1 - Bulbassauro");
