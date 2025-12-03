@@ -29,7 +29,7 @@ public class Equipe {
                 Pokemon pokemon = pokemons.get(i);
                 System.out.println((i + 1) + " - " + pokemon.getNome().toUpperCase());
                 System.out.println("--------------------------------\n");
-                System.out.println("Nome:   " + pokemon.getNome());
+                System.out.println("Pokemon:   " + pokemon.getNome());
                 System.out.println("Tipo:   " + pokemon.getTipo());
                 System.out.println("Vida:   " + pokemon.getVida() + "/" + pokemon.getVidaMaxima());
                 System.out.println("Ataque: " + pokemon.getAtaque());
@@ -65,7 +65,7 @@ public class Equipe {
         Pokemon pokemon = buscarPokemon(pokemonEscolhido);
 
         if(pokemon != null){
-            System.out.println("Nome:   " + pokemon.getNome());
+            System.out.println("Pokemon:   " + pokemon.getNome());
             System.out.println("Tipo:   " + pokemon.getTipo());
             System.out.println("Vida:   " + pokemon.getVida() + "/" + pokemon.getVidaMaxima());
             System.out.println("Ataque: " + pokemon.getAtaque());
