@@ -17,7 +17,14 @@ public class HabilidadeDeFogo extends Habilidade implements EfeitoDeStatus{
             dano *= 2;
         }
 
-        alvo.setVida(alvo.getVida() - dano);
+        int vida = alvo.getVida() - dano;
+
+        if(vida >= alvo.getVida()){
+            alvo.setStatus(Status.DESMAIADO);
+            vida = 0;
+        }
+
+        alvo.setVida(vida);
     }
 
     @Override
