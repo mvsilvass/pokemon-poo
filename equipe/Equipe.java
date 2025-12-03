@@ -24,7 +24,7 @@ public class Equipe {
     public void listarPokemonos(){
         if (!pokemons.isEmpty()) {
 
-            System.out.println("Seu time Pokémon:");
+            System.out.println("\nSeu time Pokémon:\n");
             for (int i = 0; i < pokemons.size(); i++) {
                 Pokemon pokemon = pokemons.get(i);
                 System.out.println((i + 1) + " - " + pokemon.getNome().toUpperCase());
