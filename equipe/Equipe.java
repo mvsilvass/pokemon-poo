@@ -6,11 +6,19 @@ import java.util.List;
 import pokemon.Pokemon;
 
 public class Equipe {
-    private final int totalPokemons = 7;
+    private final int totalPokemons = 3;
     private List<Pokemon> pokemons;
 
     public Equipe(){
         this.pokemons = new ArrayList<>();
+    }
+
+    public int getTotalPokemons() {
+        return totalPokemons;
+    }
+
+    public List<Pokemon> getPokemons() {
+        return pokemons;
     }
 
     public void listarPokemonos(){

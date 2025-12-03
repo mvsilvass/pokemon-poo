@@ -1,5 +1,7 @@
 package pokemon;
 
+import habilidade.Habilidade;
+
 public abstract class Pokemon {
     private String nome;
     private Tipo tipo;
@@ -9,6 +11,7 @@ public abstract class Pokemon {
     private int defensa;
     private int velocidade;
     private Status status;
+    private Habilidade habilidade;
 
     public Pokemon(String nome, Tipo tipo, int vida, int vidaMaxima, int ataque, int defensa, int velocidade) {
         this.nome = nome;
@@ -30,6 +33,7 @@ public abstract class Pokemon {
     public int getDefensa() { return defensa; }
     public int getVelocidade() { return velocidade; }
     public Status getStatus() { return status; }
+    public Habilidade getHabilidade() { return habilidade; }
 
     /* sets */
     public void setVida(int vida) { this.vida = vida; }
@@ -37,12 +41,8 @@ public abstract class Pokemon {
     public void setDefensa(int defensa) { this.defensa = defensa; }
     public void setVelocidade(int velocidade) { this.velocidade = velocidade; }
     public void setStatus(Status status) { this.status = status; }
-
-    public abstract void imprimirStatus();
-
-    public abstract void atacar(int dano);
-
-    public abstract void defender(int defesa);
     
-    public abstract void esquivar(int velocidade);
+
+    public abstract void atacar(Habilidade habilidade, Pokemon alvo);
+
 }

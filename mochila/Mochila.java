@@ -1,13 +1,12 @@
 package mochila;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import item.Item;
 import item.ItemDeCura;
 import item.Medicamento;
 import item.Reviver;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import pokemon.Pokemon;
 import pokemon.Status;
 
@@ -22,25 +21,23 @@ public class Mochila {
         Random random = new Random();
 
         // Cria itens com quantidade aleatória de 1 a 2
-        itens.add(new ItemDeCura("Poção", 20, random.nextInt(2) + 1));
-        itens.add(new ItemDeCura("Super Poção", 50, random.nextInt(2) + 1));
+        itens.add(new ItemDeCura("Pocao", 20, random.nextInt(2) + 1));
+        itens.add(new ItemDeCura("Super Pocao", 50, random.nextInt(2) + 1));
         itens.add(new ItemDeCura("Refrigerante", 30, random.nextInt(2) + 1));
 
-        itens.add(new Medicamento("Antídoto", Status.ENVENENADO, random.nextInt(2) + 1));
+        itens.add(new Medicamento("Antidoto", Status.ENVENENADO, random.nextInt(2) + 1));
         itens.add(new Medicamento("Antiqueimadura", Status.QUEIMANDO, random.nextInt(2) + 1));
-        itens.add(new Medicamento("Despertar", Status.DORMINDO, random.nextInt(2) + 1));
-        itens.add(new Medicamento("Despertar", Status.DORMINDO, random.nextInt(2) + 1));
         itens.add(new Reviver("Reviver", random.nextInt(2) + 1));
     }
 
-    public void usarItem(Item itemEscolhido, Pokemon pokemon) {
-        Item item = buscarItem(itemEscolhido.getNome());
+    public void usarItem(String nome, Pokemon pokemon) {
+        Item item = buscarItem(nome);
 
         if(item != null){
             item.aplicarEfeito(pokemon);
             atualizarQuantidade(item);
         }else{
-            System.out.println("Você não possui " + itemEscolhido.getNome() + " na mochila!");
+            System.out.println("Voce nao possui " + nome + " na mochila!");
         }
 
     }
@@ -70,7 +67,7 @@ public class Mochila {
             System.out.println("Itens na mochila:");
 
             for (Item item : itens) {
-                System.out.println("- " + item.getNome() + " x" + item.getQuantidade());
+                System.out.println("- " + item.getNome() + " x" + (item.getQuantidade() + 1));
             }
            
         }else{
@@ -92,4 +89,5 @@ public class Mochila {
             System.out.println("Você não possui " + itemEscolhido.getNome() + " na mochila!");
         }
     }
+    
 }
