@@ -21,7 +21,7 @@ public class ItemDeCura extends Item{
         }
 
         System.out.println(this.getNome() + " foi usado em " + pokemon.getNome() + "!");
-        System.out.println(pokemon.getNome() + " recuperou " + this.cura + " de sua vida (HP)");
+        System.out.println(pokemon.getNome() + " recuperou " + vidaRecuperada + " de sua vida (HP)");
   
     }                        
     
