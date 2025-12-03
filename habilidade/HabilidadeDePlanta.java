@@ -10,6 +10,13 @@ public class HabilidadeDePlanta extends Habilidade implements EfeitoDeStatus{
     }
 
     @Override
+    public void aplicarStatus(Pokemon alvo) {
+        if(alvo.getStatus() != Status.NORMAL){
+            alvo.setStatus(Status.ENVENENADO);
+        }
+    }
+
+    @Override
     public void usarHabilidade(Pokemon alvo) {
         int dano = this.getPokemon().getAtaque() - alvo.getDefensa();
 
@@ -17,18 +24,15 @@ public class HabilidadeDePlanta extends Habilidade implements EfeitoDeStatus{
             dano *= 1.5;
         }
         
-        int vida = alvo.getVida() - dano;
+        int vidaRestante = alvo.getVida() - dano;
 
-        if(vida >= alvo.getVida()){
+        if(vidaRestante <= alvo.getVida()){
             alvo.setStatus(Status.DESMAIADO);
-            vida = 0;
+            vidaRestante = 0;
         }
 
-        alvo.setVida(vida);
+        alvo.setVida(vidaRestante);
+        aplicarStatus(alvo);
     }   
- 
-    @Override
-    public void aplicarStatus(Pokemon alvo) {
-        alvo.setStatus(Status.ENVENENADO);
-    }
+
 }
