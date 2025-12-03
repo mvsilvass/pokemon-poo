@@ -5,8 +5,8 @@ import pokemon.Status;
 import pokemon.Tipo;
 
 public class HabilidadeDeFogo extends Habilidade implements EfeitoDeStatus{
-    public HabilidadeDeFogo(String nome, String descricao, Pokemon pokemon) {
-        super(nome, descricao, pokemon);
+    public HabilidadeDeFogo(String nome, String descricao) {
+        super(nome, descricao);
     }
 
     @Override
@@ -19,8 +19,8 @@ public class HabilidadeDeFogo extends Habilidade implements EfeitoDeStatus{
     }  
 
     @Override
-    public void usarHabilidade(Pokemon alvo) {
-        int dano = this.getPokemon().getAtaque() - alvo.getDefensa();
+    public void usarHabilidade(Pokemon atacante, Pokemon alvo) {
+        int dano = atacante.getAtaque() - alvo.getDefensa();
 
         if(alvo.getTipo() == Tipo.PLANTA){
             dano *= 1.5;

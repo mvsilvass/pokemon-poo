@@ -12,7 +12,7 @@ public abstract class Pokemon {
     private Status status;
     private Habilidade habilidade;
 
-    public Pokemon(String nome, Tipo tipo, int vida, int vidaMaxima, int ataque, int defensa) {
+    public Pokemon(String nome, Tipo tipo, int vida, int vidaMaxima, int ataque, int defensa, Habilidade habilidade) {
         this.nome = nome;
         this.tipo = tipo;
         this.vida = vida;
@@ -20,6 +20,7 @@ public abstract class Pokemon {
         this.ataque = ataque;
         this.defensa = defensa;
         this.status = Status.NORMAL;
+        this.habilidade = habilidade;
     }
     
     /* gets */

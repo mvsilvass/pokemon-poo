@@ -5,15 +5,13 @@ import pokemon.Pokemon;
 public abstract class Habilidade {
     private String nome;
     private String descricao;
-    private Pokemon pokemon;
 
-    public Habilidade(String nome, String descricao, Pokemon pokemon) {
+    public Habilidade(String nome, String descricao) {
         this.nome = nome;
         this.descricao = descricao;
-        this.pokemon = pokemon;
     }
 
-    public abstract void usarHabilidade(Pokemon alvo);
+    public abstract void usarHabilidade(Pokemon atacante, Pokemon alvo);
 
     public String getNome() {
         return nome;
@@ -21,10 +19,6 @@ public abstract class Habilidade {
 
     public String getDescricao() {
         return descricao;
-    }
-
-    public Pokemon getPokemon() {
-        return pokemon;
     }
 
 }
