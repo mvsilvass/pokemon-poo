@@ -14,12 +14,12 @@ public class HabilidadeDeAgua extends Habilidade{
         int dano = this.getPokemon().getAtaque() - alvo.getDefensa();
 
         if(alvo.getTipo() == Tipo.FOGO){
-            dano *= 1.5;
+            dano *= 1.6;
         }
 
-        int vidaRestante = alvo.getVida() - dano;
+        int vidaRestante = alvo.getVida() - (int) Math.round(dano);
 
-        if(vidaRestante <= alvo.getVida()){
+        if(vidaRestante <= 0){
             alvo.setStatus(Status.DESMAIADO);
             vidaRestante = 0;
         }
