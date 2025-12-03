@@ -3,7 +3,6 @@ package mochila;
 import item.Item;
 import item.ItemDeCura;
 import item.Medicamento;
-import item.Reviver;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -26,7 +25,6 @@ public class Mochila {
         itens.add(new ItemDeCura("Refrigerante", 30, random.nextInt(2) + 1));
 
         itens.add(new Medicamento("Antiqueimadura", Status.QUEIMANDO, random.nextInt(2) + 1));
-        itens.add(new Reviver("Reviver", random.nextInt(2) + 1));
     }
 
     public void usarItem(String nome, Pokemon pokemon) {
