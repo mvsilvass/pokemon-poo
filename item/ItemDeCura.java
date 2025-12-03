@@ -21,7 +21,7 @@ public class ItemDeCura extends Item{
             pokemon.setVida(vidaRecuperada);
         }
 
-        System.out.println(this.getNome() + " foi usado em " + pokemon.getNome() + "!");
+        System.out.println("\n"+ this.getNome() + " foi usado em " + pokemon.getNome() + "!");
         System.out.println(pokemon.getNome() + " recuperou " + (pokemon.getVida() - vidaAntesCura) + " de sua vida (HP)");
   
     }                        
